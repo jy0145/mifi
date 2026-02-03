@@ -1,0 +1,584 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Pretendard Variable', Pretendard, Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    line-height: 24px;
+    color: #292929;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+ul {
+    list-style: none;
+}
+
+.layout {
+    width: 100%;
+    max-width: 1800px;
+    margin: 0 auto;
+}
+
+
+/* 로고 시작 */
+.logo{
+    width: 80px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.logo img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+}
+
+.logo img:first-child {
+    z-index: 2;
+    opacity: 1;
+}
+
+.logo img:last-child {
+    z-index: 1;
+    opacity: 0;
+}
+
+.logo:hover img:first-child {
+    opacity: 0;
+}
+
+.logo:hover img:last-child {
+    opacity: 1;
+}
+
+/* 로고 끝 */
+
+/* 헤더 시작 */
+.header {
+    padding-top: 125px;
+    width: 100%;
+    max-width: 1000px;
+    margin: 20px auto;
+}
+
+.gnb {
+    display: flex;
+    justify-content: space-between;
+    background-color: #eeeeee;
+    border-radius: 10px;
+}
+
+.gnb li {
+    flex: 1;
+    text-align: center;
+    padding: 15px 0;
+    cursor: pointer;
+    border-radius: 10px;
+}
+
+.gnb li:hover {
+    color: #fff;
+    background-color: #292929;
+}
+
+/* --- 헤더 반응형 --- */
+
+/* 타블렛 (1024px 미만) */
+@media (max-width: 1023px) {
+    .header {
+        width: 95%;   /* 화면에 붙지 않게 여백 */
+    }
+    .gnb li {
+        padding: 12px 0;
+        font-size: 16px;
+    }
+}
+
+/* 모바일 (768px 미만) */
+@media (max-width: 767px) {
+    .gnb {
+        flex-wrap: wrap; 
+        background-color: #eeeeee;
+        border-radius: 15px;
+    }
+    
+    .gnb li {
+        flex: none;
+        width: 33.333%;   
+        padding: 15px 0; 
+        font-size: 14px;
+        font-weight: 500;
+    }
+
+}
+/* 헤더 끝 */
+
+/* 콘텐츠1 시작 */
+.main-slider1 {
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  border-radius: 40px;
+  position: relative;
+}
+
+.main-slider1 .swiper-slide img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.main-slider1 .swiper-pagination-bullet-active {
+  background: #ffffff;
+  opacity: 1;
+}
+
+/* --- 콘텐츠1 반응형 --- */
+
+/* 타블렛 (1024px 미만) */
+@media (max-width: 1023px) {
+  .main-slider1 {
+    width: 95%;        
+    border-radius: 30px;  
+  }
+}
+
+/* 모바일 (768px 미만) */
+@media (max-width: 767px) {
+  .main-slider1 {
+    width: 95%; 
+    border-radius: 20px;  
+  }
+}
+/* 콘텐츠1 끝 */
+
+
+/* 하이 시작 */
+
+/* --- 하이 시작 (데스크탑 기본) --- */
+.hi {
+  width: 100%;
+  height: 450px; /* 이미지 높이에 맞춰 적절히 조절 */
+  max-width: 1800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden; /* 모바일에서 삐져나감 방지 */
+  margin-top: 130px;
+  margin-bottom: 100px;
+}
+
+/* 모든 이미지 공통 */
+.hi img {
+  position: absolute;
+  top: 0;
+  height: auto;
+}
+
+/* hi1(기본)과 hi2(호버용)를 겹쳐서 중앙 근처 배치 */
+.hi1, .hi2 {
+  left: 50%;
+  transform: translateX(-50%); /* 42% 느낌을 유지하기 위한 미세조정 */
+  width: 300px; /* 이미지 크기에 맞게 지정하세요 */
+}
+
+.hi2 {
+  opacity: 0;
+  z-index: 10; /* 호버를 직접 받아야 하므로 가장 위로 */
+}
+
+/* 호버 로직: hi2 자체에 호버하면 나타남 */
+.hi2:hover {
+  opacity: 1;
+}
+
+/* --- .hi 반응형 구간 --- */
+
+/* 타블렛 (1024px 미만) */
+@media (max-width: 1023px) {
+  .hi {
+    height: 350px;
+    margin: 0 auto;
+  margin-top: 140px;
+  margin-bottom: 100px;
+    box-sizing: border-box;
+  }
+  .hi1, .hi2 {
+    width: 220px;
+    transform: translateX(-50%); 
+  }
+
+}
+
+/* 모바일 (767px 미만) */
+@media (max-width: 767px) {
+  .hi {
+    height: 280px;
+    margin: 0 auto;
+  margin-top: 100px;
+  margin-bottom: 40px;
+  }
+  
+  /* 모바일은 공간이 좁으므로 이미지 크기를 대폭 축소 */
+  .hi1, .hi2 {
+    width: 160px;
+    transform: translateX(-50%); 
+  }
+
+  /* 모바일은 호버가 없으므로, hi2를 살짝 보여주거나 
+     터치(active) 시에만 보이게 설정 */
+  .hi2:active {
+    opacity: 1;
+  }
+}
+
+
+/* 콘텐츠2 시작 */
+/* 기본 컨테이너 설정 */
+
+
+.mySwiper2 {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.piushie{
+    text-align: center;
+    margin: 0 auto;
+    width: 160px;
+    padding: 14px 0;
+    margin-bottom: 100px;
+    margin-top: 80px;
+    border-radius: 10px;
+    font-size: 26px;
+    background-color: #292929;
+    color: #fff;
+}
+.goods{
+    text-align: center;
+    margin: 0 auto;
+    width: 140px;
+    padding: 14px 0;
+    margin-bottom: 100px;
+    margin-top: 180px;
+    border-radius: 10px;
+    font-size: 26px;
+    background-color: #292929;
+    color: #fff;
+}
+
+
+.mySwiper2 .swiper-slide {
+  position: relative; 
+  width: 324px;
+  height: 500px;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.mySwiper2 .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 하단 BUY NOW 버튼 */
+.buy-btn2 {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  padding: 12px 0;
+  border-radius: 30px;
+  border: none;
+  background-color: #292929;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+  z-index: 10;
+}
+
+/* 버튼 호버 */
+.buy-btn2:hover {
+  background-color: #fff;
+  color: #292929;
+  border: 1px solid #292929;
+}
+/* 콘텐츠2 끝 */
+
+/* 콘텐츠3 시작 */
+.content3-wrap{
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+}
+
+.content3-wrap p{
+    text-align: center;
+    margin: 0 auto;
+    width: 140px;
+    padding: 14px 0;  
+    margin-top: 180px;
+    margin-bottom: 100px;
+    border-radius: 10px;
+    font-size: 26px;
+    background-color: #292929;
+    color: #fff;
+}
+
+.content3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.event img{
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.event img:hover{
+  opacity: 0.7;
+}
+
+.event img:nth-child(1){
+  margin-bottom: 10px;
+}
+
+.event{
+  text-align: center;
+}
+
+.up1,
+.up2{
+width: 150px;
+height: 193px;
+}
+
+.up1{
+  margin-left: 50px;
+}
+.up2{
+  margin-right: 50px;
+}
+
+/* 1. 왼쪽 풍선: 일정한 속도로 상승 + 좌우 흔들림 */
+@keyframes flyUpLinear1 {
+  0% {
+    transform: translateY(800px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; }
+  /* 구간별로 translateY를 일정하게 배분하여 일정한 속도 유지 */
+  25% { transform: translateY(400px) translateX(-30px) rotate(-5deg); }
+  50% { transform: translateY(0px) translateX(30px) rotate(5deg); }
+  75% { transform: translateY(-400px) translateX(-30px) rotate(-5deg); }
+  90% { opacity: 1; }
+  100% {
+    transform: translateY(-900px) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+/* 1. 왼쪽 풍선: 10초 동안 등속 상승 + 완만한 흔들림 */
+@keyframes steadyFly1 {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  10% { opacity: 1; } /* 등장 시 페이드인 */
+  25% { transform: translateY(50vh) translateX(-40px) rotate(-10deg); }
+  50% { transform: translateY(0vh) translateX(40px) rotate(10deg); }
+  75% { transform: translateY(-50vh) translateX(-40px) rotate(-10deg); }
+  90% { opacity: 1; } /* 퇴장 전 페이드아웃 준비 */
+  100% {
+    transform: translateY(-120vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+/* 2. 오른쪽 풍선: 8초 동안 등속 상승 + 더 빠르고 큰 흔들림 */
+@keyframes steadyFly2 {
+  0% {
+    transform: translateY(100vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+  15% { opacity: 1; }
+  33% { transform: translateY(33vh) translateX(60px) rotate(15deg); }
+  66% { transform: translateY(-33vh) translateX(-60px) rotate(-15deg); }
+  85% { opacity: 1; }
+  100% {
+    transform: translateY(-120vh) translateX(0) rotate(0deg);
+    opacity: 0;
+  }
+}
+
+.up1 {
+  margin-left: 50px;
+  /* linear: 처음부터 끝까지 같은 속도로 유지 */
+  animation: steadyFly1 12s linear infinite;
+}
+
+.up2 {
+  margin-right: 50px;
+  /* up1보다 빠르게 상승, 1.5초 뒤에 출발하여 엇박자 연출 */
+  animation: steadyFly2 12s linear 1s infinite;
+}
+
+
+/* [태블릿 & 모바일 통합] 1023px 이하 */
+@media screen and (max-width: 1023px) {
+  /* 1. 풍선 이미지 완전 제거 */
+  .up1, .up2 {
+    display: none !important;
+  }
+
+  /* 2. 중앙 콘텐츠 정렬 최적화 */
+  .content3 {
+    display: flex;
+    flex-direction: column; /* 이미지를 세로로 나열 (필요 시) */
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  /* 3. 이벤트 이미지 크기 조정 (화면 밖으로 나가지 않게) */
+  .event img {
+    width: 90%; 
+    max-width: 1000px; /* 너무 커지지 않게 제한 */
+    height: auto;
+    margin: 0 auto 15px auto; /* 이미지 간 간격 */
+  }
+
+}
+
+/* 모바일 환경 (768px 이하) */
+@media screen and (max-width: 767px) {
+  /* 풍선 이미지가 방해된다면 display: none; 처리 */
+  /* 만약 모바일에서도 보고 싶다면 이 부분을 삭제하세요 */
+  .up1, .up2 {
+    display: none; 
+  }
+
+  .content3 {
+    flex-direction: column; /* 세로 정렬로 변경 가능 */
+  }
+
+  .event img {
+    width: 90%; /* 이미지 폭 조절 */
+    height: auto;
+  }
+}
+/* 콘텐츠3 끝 */
+
+/* 콘텐츠4 시작 */
+
+.content4 {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+
+.content4 p {
+  text-align: center;
+  margin: 180px auto 100px; /* 위 180, 좌우 자동, 아래 100 */
+  width: 180px;
+  padding: 14px 0;
+  border-radius: 10px;
+  font-size: 26px;
+  background-color: #292929;
+  color: #fff;
+}
+
+.content4 iframe {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
+  height: auto;
+}
+/* 콘텐츠4 끝 */
+
+/* 콘텐츠5 시작 */
+.content5{
+  width: 100%;
+  max-width: 1800px;
+  margin: 0 auto;
+}
+
+.content5 p {
+  text-align: center;
+  margin: 180px auto 100px; /* 위 180, 좌우 자동, 아래 100 */
+  width: 180px;
+  padding: 14px 0;
+  border-radius: 10px;
+  font-size: 26px;
+  background-color: #292929;
+  color: #fff;
+}
+
+.insta{
+  display: flex;
+flex-wrap: wrap; /* 화면이 좁아지면 아래로 떨어지게 설정 */
+  gap: 10px; /* 이미지 사이 간격 (선택 사항) */
+  justify-content: center; /* 중앙 정렬 */
+}
+
+.insta li{
+  width: calc(15.9%);
+  cursor: pointer;
+}
+
+.insta li img {
+  width: 100%;
+  display: block;
+}
+
+.insta li:hover{
+  opacity: 0.7;
+}
+
+@media (max-width: 1023px) {
+  .insta li {
+    width: calc(31%);
+  }
+  }
+
+  @media (max-width: 767px) {
+  .insta li {
+    width: calc(46%);
+  }
+}
+/* 콘텐츠5 끝 */
+
+/* 푸터 시작 */
+.footer{
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 400px;
+}
+
+.footer img{
+  width: 100%;
+  display: block;
+}
